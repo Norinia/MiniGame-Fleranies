@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6aawb0xues1c"]
+
+[ext_resource type="Script" path="res://Scenen/gegner_erde.gd" id="1_12v5a"]
+[ext_resource type="Texture2D" uid="uid://bgyl52byewwg1" path="res://Assets/Gegner/animation.png" id="1_nvtax"]
+[ext_resource type="Texture2D" uid="uid://mxv0jh50cwpo" path="res://Assets/Gegner/Gegner tod.png" id="3_l050r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13vcw"]
+atlas = ExtResource("1_nvtax")
+region = Rect2(2, 0, 88, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svs0g"]
+atlas = ExtResource("1_nvtax")
+region = Rect2(90, 0, 88, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrjd1"]
+atlas = ExtResource("3_l050r")
+region = Rect2(90, 11, 88, 170)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_01c1j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13vcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svs0g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrjd1")
+}],
+"loop": true,
+"name": &"sequashed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihi5e"]
+size = Vector2(58, 74.375)
+
+[node name="Gegner Erde" type="Node2D"]
+script = ExtResource("1_12v5a")
+
+[node name="Animated" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(4, 8)
+scale = Vector2(0.710227, 0.723077)
+sprite_frames = SubResource("SpriteFrames_01c1j")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 12)
+shape = SubResource("RectangleShape2D_ihi5e")
+
+[node name="rechts" type="RayCast2D" parent="."]
+target_position = Vector2(34, 0)
+
+[node name="links" type="RayCast2D" parent="."]
+target_position = Vector2(-25, 0)
+
+[node name="Boden rechts" type="RayCast2D" parent="."]
+target_position = Vector2(18, 56)
+
+[node name="Boden links" type="RayCast2D" parent="."]
+target_position = Vector2(-24, 51)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.244
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

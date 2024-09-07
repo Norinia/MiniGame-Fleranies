@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1ufxjqnpfjoe"
+path="res://.godot/imported/Kristall saound.mp3-a09eea64a98e864d694eaf6f94fefcab.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Kristall saound.mp3"
+dest_files=["res://.godot/imported/Kristall saound.mp3-a09eea64a98e864d694eaf6f94fefcab.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

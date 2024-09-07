@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://tmpckqumhg21"]
+
+[ext_resource type="Texture2D" uid="uid://dn5u58qgh3q3w" path="res://Assets/game_elements/Kristall animation.png" id="1_xa8hv"]
+[ext_resource type="Script" path="res://Scenen/kristall.gd" id="1_yjkhq"]
+[ext_resource type="AudioStream" uid="uid://c1ufxjqnpfjoe" path="res://Sounds/Kristall saound.mp3" id="3_p8m5h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgmjq"]
+atlas = ExtResource("1_xa8hv")
+region = Rect2(50, 63, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wivdi"]
+atlas = ExtResource("1_xa8hv")
+region = Rect2(66, 63, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fmyr"]
+atlas = ExtResource("1_xa8hv")
+region = Rect2(82, 63, 16, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2gu2r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgmjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wivdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fmyr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k3m54"]
+radius = 15.0
+height = 38.0
+
+[node name="Kristall" type="Area2D"]
+position = Vector2(476, 472)
+script = ExtResource("1_yjkhq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 2
+position = Vector2(4, 8)
+scale = Vector2(2.25, 2.06061)
+sprite_frames = SubResource("SpriteFrames_2gu2r")
+autoplay = "default"
+frame_progress = 0.0767733
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 9)
+shape = SubResource("CapsuleShape2D_k3m54")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.085
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_p8m5h")
+volume_db = 2.589
+pitch_scale = 0.88
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
