@@ -11,6 +11,8 @@ var SPEED = 40
 @onready var boden_links = $"Boden links"
 @onready var rechts = $rechts
 @onready var links = $links
+var body = TileMap
+@onready var tile_map_2 = $"../../TileMap2"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,21 +22,25 @@ func _process(delta):
 		#print("wand")
 		diration=-1
 		animated.flip_h=true
+		#print("rehcts")
 	if links.is_colliding():
 		#print("Wand")
 		diration=1
 		animated.flip_h=false
+		print("links")
 		
 	if not boden_rechts.is_colliding():
 		#print("kein boden ")
 		diration=-1
 		animated.flip_h=true
+		print("kein boden rechts")
 	
 	if  not boden_links.is_colliding():
 		#print("kein boden")
 		diration = 1
 		animated.flip_h=false
 	position.x += diration*SPEED*delta	
+	
 
 func _on_area_2d_body_entered(body):
 	#kollision mit dem Spieler
