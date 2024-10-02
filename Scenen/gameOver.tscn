@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://bndxugc5aqrh"]
+
+[ext_resource type="Script" path="res://Scenen/gameOver.gd" id="1_nta6m"]
+[ext_resource type="Texture2D" uid="uid://102jlms3fwef" path="res://Assets/background/level 1 .jpg" id="2_byp1v"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_nta6m")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.396078, 0.396078, 0.396078, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_byp1v")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -34.5
+offset_right = 136.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Game Over
+"
+
+[node name="versuch" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = 42.0
+offset_right = 132.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(0.439216, 0.439216, 0.439216, 1)
+theme_override_font_sizes/font_size = 25
+text = "Erneut Versuchen"
+
+[node name="Menü" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = 94.0
+offset_right = 131.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(0.439216, 0.439216, 0.439216, 1)
+theme_override_font_sizes/font_size = 25
+text = "Menü
+"
+
+[connection signal="pressed" from="versuch" to="." method="_on_versuch_pressed"]
+[connection signal="pressed" from="Menü" to="." method="_on_menü_pressed"]

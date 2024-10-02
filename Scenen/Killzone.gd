@@ -11,6 +11,6 @@ func _on_body_entered(body):
 
 
 func _on_timer_timeout():
-	get_tree().change_scene_to_file("res://Scenen/Level1(wald).tscn")
+	get_tree().change_scene_to_file("res://Scenen/gameOver.tscn")
 # das konnte nicht in func_on_body_entered weil das ein in Signal ist und
 # das wohl nicht geht

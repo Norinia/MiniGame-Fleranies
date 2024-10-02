@@ -42,6 +42,7 @@ animations = [{
 size = Vector2(58, 74.375)
 
 [node name="Gegner Erde" type="Node2D"]
+position = Vector2(-2, -7)
 script = ExtResource("1_12v5a")
 
 [node name="Animated" type="AnimatedSprite2D" parent="."]
@@ -58,16 +59,18 @@ position = Vector2(3, 12)
 shape = SubResource("RectangleShape2D_ihi5e")
 
 [node name="rechts" type="RayCast2D" parent="."]
-target_position = Vector2(34, 0)
+position = Vector2(2, 8)
+target_position = Vector2(31, -1)
 
 [node name="links" type="RayCast2D" parent="."]
+position = Vector2(2, 7)
 target_position = Vector2(-25, 0)
 
 [node name="Boden rechts" type="RayCast2D" parent="."]
-target_position = Vector2(18, 56)
+target_position = Vector2(35, 52)
 
 [node name="Boden links" type="RayCast2D" parent="."]
-target_position = Vector2(-24, 51)
+target_position = Vector2(-42, 53)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.244

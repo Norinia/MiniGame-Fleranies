@@ -17,7 +17,7 @@ var body = TileMap
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.x += diration*SPEED*delta
+	#position.x += diration*SPEED*delta
 	if rechts.is_colliding():
 		#print("wand")
 		diration=-1
@@ -27,13 +27,14 @@ func _process(delta):
 		#print("Wand")
 		diration=1
 		animated.flip_h=false
-		print("links")
+		#print("links")
 		
 	if not boden_rechts.is_colliding():
 		#print("kein boden ")
 		diration=-1
 		animated.flip_h=true
-		print("kein boden rechts")
+		##print("kein boden rechts")
+		##await get_tree().create_timer(2).timeout
 	
 	if  not boden_links.is_colliding():
 		#print("kein boden")
