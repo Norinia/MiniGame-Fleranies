@@ -1,12 +1,12 @@
 extends Node
-# zäählt die Leben die der Spieler hat
+# zählt die Leben die der Spieler hat
 var lives = 3
 @export var hearts : Array[Node]
 
 func health():
 	lives -= 1
 	print(lives)
-	for h in 3:
+	for h in 3 :
 		if (h< lives):
 			hearts[h].show()
 		else:

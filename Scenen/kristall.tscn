@@ -42,7 +42,7 @@ position = Vector2(476, 472)
 script = ExtResource("1_yjkhq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 2
+texture_filter = 1
 position = Vector2(4, 8)
 scale = Vector2(2.25, 2.06061)
 sprite_frames = SubResource("SpriteFrames_2gu2r")
@@ -50,6 +50,7 @@ autoplay = "default"
 frame_progress = 0.0767733
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
 position = Vector2(3, 9)
 shape = SubResource("CapsuleShape2D_k3m54")
 
