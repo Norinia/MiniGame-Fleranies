@@ -1255,7 +1255,6 @@ position = Vector2(188, 423)
 
 [node name="Camera2D" type="Camera2D" parent="Liron"]
 position = Vector2(-11, 21)
-zoom = Vector2(1, 1.15)
 limit_left = -8
 limit_top = -8
 limit_bottom = 700
