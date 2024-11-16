@@ -70,4 +70,3 @@ func _physics_process(delta):
 
 func _on_timer_timeout():
 	set_modulate(Color(1,1,1,1))
-
